@@ -1,4 +1,4 @@
-function getFormvalue(event) {
+document.getElementById('form1').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
     // Retrieve the input values
@@ -7,4 +7,4 @@ function getFormvalue(event) {
 
     // Display the full name using an alert
     alert(firstName + ' ' + lastName);
-}
+});
