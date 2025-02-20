@@ -1,10 +1,16 @@
-document.getElementById('form1').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+function getFormvalue(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+    
+    let firstName = document.querySelector("input[name='fname']").value.trim();
+    let lastName = document.querySelector("input[name='lname']").value.trim();
+    
+    if (!firstName || !lastName) {
+        alert("Please enter both first and last names.");
+        return;
+    }
+    
+    alert(firstName + " " + lastName);
+}
 
-    // Retrieve the input values
-    var firstName = document.querySelector('input[name="fname"]').value.trim();
-    var lastName = document.querySelector('input[name="lname"]').value.trim();
-
-    // Display the full name using an alert
-    alert(firstName + ' ' + lastName);
-});
+// Attach event listener to form submission
+document.getElementById("form1").addEventListener("submit", getFormvalue);
